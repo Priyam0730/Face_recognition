@@ -8,6 +8,7 @@ from face_recognition import Face_Recognition
 from attendence import Attendence
 from help import Help
 import tkinter
+from developer import Developer
 
 class Face_Recognition_System:
      def __init__(self,root):
@@ -128,9 +129,11 @@ class Face_Recognition_System:
 
           b1=Button(bg_img,image=self.photoimg10,cursor="hand2")
           b1.place(x=800,y=380,width=220,height=220)
-
+          command=self.developer_data
+          
           b1=Button(bg_img,text="Developer",cursor="hand2",font =("heinrich",15,"italic"),bg="darkred",fg="white")
           b1.place(x=800,y=580,width=220,height=40)
+          command=self.developer_data
 
            #Exitbutton
           img11=Image.open("C:/Users/happy/Desktop/Face recognition system/college_images/exit.jpg")
@@ -164,6 +167,9 @@ class Face_Recognition_System:
      def help_data(self):
           self.new_window=Toplevel(self.root)
           self.app=Help(self.new_window)
+     def developer_data(self):
+          self.new_window=Toplevel(self.root)
+          self.app=Developer(self.new_window)
      
      def iExit(self):
           self.iExit=tkinter.messagebox.askyesno("Face Recognition","Are you sure to exit this page",parent=self.root)
